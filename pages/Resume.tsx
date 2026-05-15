@@ -110,6 +110,7 @@ const Resume: React.FC = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.1 }}
         className="max-w-3xl mx-auto bg-paper shadow-xl print:shadow-none min-h-[1000px] p-8 md:p-12 border border-ink/10 print:border-none"
+        style={resumeThemeStyles}
       >
         
         {/* Header Section */}
