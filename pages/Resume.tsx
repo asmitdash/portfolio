@@ -71,25 +71,15 @@ const Resume: React.FC = () => {
     window.print();
   };
 
-  const resumeThemeStyles = {
-    '--paper': '#fdfbf7',
-    '--ink': '#2c2c2c',
-    '--pencil': '#555555',
-    '--highlight': '#fef08a'
-  } as React.CSSProperties;
-
   return (
-    <div
-      className="min-h-screen bg-paper pt-24 pb-16 print:p-0 print:bg-white transition-colors duration-500"
-      style={resumeThemeStyles}
-    >
+    <div className="min-h-screen bg-[#fdfbf7] pt-24 pb-16 print:p-0 print:bg-white transition-colors duration-500">
       {/* Action Bar (Hidden on Print) */}
       <motion.div 
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         className="max-w-3xl mx-auto px-6 mb-6 flex justify-between items-center print:hidden"
       >
-        <Link to="/" className="flex items-center text-pencil hover:text-ink font-hand text-lg group">
+        <Link to="/" className="flex items-center text-[#555555] hover:text-[#2c2c2c] font-hand text-lg group">
           <ArrowLeft size={18} className="mr-2 group-hover:-translate-x-1 transition-transform" />
           Back to Work
         </Link>
@@ -97,7 +87,7 @@ const Resume: React.FC = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handlePrint}
-          className="sketch-button flex items-center space-x-2 bg-ink text-paper px-5 py-2 font-hand font-bold text-lg shadow-lg"
+          className="sketch-button flex items-center space-x-2 bg-[#2c2c2c] text-[#fdfbf7] px-5 py-2 font-hand font-bold text-lg shadow-lg"
         >
           <Download size={18} />
           <span>Download PDF</span>
@@ -109,18 +99,17 @@ const Resume: React.FC = () => {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.1 }}
-        className="max-w-3xl mx-auto bg-paper shadow-xl print:shadow-none min-h-[1000px] p-8 md:p-12 border border-ink/10 print:border-none"
-        style={resumeThemeStyles}
+        className="max-w-3xl mx-auto bg-[#fdfbf7] shadow-xl print:shadow-none min-h-[1000px] p-8 md:p-12 border border-[rgba(44,44,44,0.1)] print:border-none"
       >
         
         {/* Header Section */}
-        <header className="border-b-2 border-ink pb-6 mb-8">
+        <header className="border-b-2 border-[#2c2c2c] pb-6 mb-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end">
             <div className="mb-4 md:mb-0">
-              <h1 className="text-4xl font-serif font-bold text-ink mb-1 tracking-tight">Vidhi Bhanushali</h1>
+              <h1 className="text-4xl font-serif font-bold text-[#2c2c2c] mb-1 tracking-tight">Vidhi Bhanushali</h1>
               <p className="text-xl font-hand text-blue-600 font-bold">Product Designer Intern</p>
             </div>
-            <div className="space-y-1 text-left md:text-right text-pencil font-serif text-sm">
+            <div className="space-y-1 text-left md:text-right text-[#555555] font-serif text-sm">
               <div className="flex items-center md:justify-end space-x-2">
                 <span>vvidhi.design@gmail.com</span>
                 <Mail size={14} />
@@ -148,7 +137,7 @@ const Resume: React.FC = () => {
             
             {/* Experience Section (Latest to Oldest) */}
             <section>
-              <h2 className="text-lg font-serif font-bold text-ink uppercase tracking-[0.2em] border-b border-ink/10 pb-2 mb-6 flex items-center">
+              <h2 className="text-lg font-serif font-bold text-[#2c2c2c] uppercase tracking-[0.2em] border-b border-[rgba(44,44,44,0.1)] pb-2 mb-6 flex items-center">
                 <Briefcase size={18} className="mr-3 text-blue-600" />
                 Experience
               </h2>
@@ -161,17 +150,17 @@ const Resume: React.FC = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 }}
-                    className="relative pl-4 border-l border-ink/10"
+                    className="relative pl-4 border-l border-[rgba(44,44,44,0.1)]"
                   >
                     <div className="absolute top-1.5 -left-[5px] w-2 h-2 rounded-full bg-blue-600"></div>
                     <div className="flex justify-between items-baseline mb-1">
-                      <h3 className="text-lg font-bold text-ink">{exp.role}</h3>
-                      <span className="text-xs font-hand font-bold text-pencil bg-paper/60 px-2 py-0.5 rounded">{exp.period}</span>
+                      <h3 className="text-lg font-bold text-[#2c2c2c]">{exp.role}</h3>
+                      <span className="text-xs font-hand font-bold text-[#555555] bg-[rgba(253,251,247,0.6)] px-2 py-0.5 rounded">{exp.period}</span>
                     </div>
                     <p className="text-blue-600 font-serif font-bold italic text-sm mb-2">{exp.company}</p>
                     <ul className="space-y-1.5">
                       {exp.description.map((bullet, bIdx) => (
-                        <li key={bIdx} className="flex items-start text-xs text-pencil leading-relaxed">
+                        <li key={bIdx} className="flex items-start text-xs text-[#555555] leading-relaxed">
                           <span className="mr-2 mt-1.5 w-1 h-1 rounded-full bg-gray-300 flex-shrink-0"></span>
                           {bullet}
                         </li>
@@ -184,7 +173,7 @@ const Resume: React.FC = () => {
 
             {/* Education Section (Latest to Oldest) */}
             <section>
-              <h2 className="text-lg font-serif font-bold text-ink uppercase tracking-[0.2em] border-b border-ink/10 pb-2 mb-6 flex items-center">
+              <h2 className="text-lg font-serif font-bold text-[#2c2c2c] uppercase tracking-[0.2em] border-b border-[rgba(44,44,44,0.1)] pb-2 mb-6 flex items-center">
                 <GraduationCap size={20} className="mr-3 text-blue-600" />
                 Education
               </h2>
@@ -199,10 +188,10 @@ const Resume: React.FC = () => {
                     className="flex justify-between items-start"
                   >
                     <div>
-                      <h3 className="text-md font-bold text-ink">{edu.school}</h3>
-                      <p className="text-pencil italic text-xs">{edu.degree}</p>
+                      <h3 className="text-md font-bold text-[#2c2c2c]">{edu.school}</h3>
+                      <p className="text-[#555555] italic text-xs">{edu.degree}</p>
                     </div>
-                    <span className="text-xs font-hand font-bold text-pencil bg-paper/60 px-2 py-0.5 rounded">{edu.year}</span>
+                    <span className="text-xs font-hand font-bold text-[#555555] bg-[rgba(253,251,247,0.6)] px-2 py-0.5 rounded">{edu.year}</span>
                   </motion.div>
                 ))}
               </div>
@@ -214,7 +203,7 @@ const Resume: React.FC = () => {
             
             {/* Expertise Section */}
             <section>
-              <h2 className="text-lg font-serif font-bold text-ink uppercase tracking-[0.2em] border-b border-ink/10 pb-2 mb-6 flex items-center">
+              <h2 className="text-lg font-serif font-bold text-[#2c2c2c] uppercase tracking-[0.2em] border-b border-[rgba(44,44,44,0.1)] pb-2 mb-6 flex items-center">
                 <Code size={18} className="mr-3 text-blue-600" />
                 Expertise
               </h2>
@@ -226,7 +215,7 @@ const Resume: React.FC = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.05 }}
-                    className="px-2 py-1 bg-paper/60 border border-ink/10 text-ink rounded text-[10px] font-serif font-bold tracking-tight uppercase"
+                    className="px-2 py-1 bg-[rgba(253,251,247,0.6)] border border-[rgba(44,44,44,0.1)] text-[#2c2c2c] rounded text-[10px] font-serif font-bold tracking-tight uppercase"
                   >
                     {skill}
                   </motion.span>
@@ -236,19 +225,19 @@ const Resume: React.FC = () => {
 
             {/* Interactive Links Section */}
             <section>
-              <h2 className="text-lg font-serif font-bold text-ink uppercase tracking-[0.2em] border-b border-ink/10 pb-2 mb-6">
+              <h2 className="text-lg font-serif font-bold text-[#2c2c2c] uppercase tracking-[0.2em] border-b border-[rgba(44,44,44,0.1)] pb-2 mb-6">
                 Connect
               </h2>
               <div className="space-y-3 font-serif text-xs">
-                <div className="p-3 bg-paper/30 border border-ink/10 rounded">
-                  <p className="font-bold text-ink mb-1 text-[10px] uppercase tracking-wider opacity-60">Portfolio</p>
+                <div className="p-3 bg-[rgba(253,251,247,0.3)] border border-[rgba(44,44,44,0.1)] rounded">
+                  <p className="font-bold text-[#2c2c2c] mb-1 text-[10px] uppercase tracking-wider opacity-60">Portfolio</p>
                   <a href="https://vidhi-bhanushali.web.app" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline flex items-center">
                     vidhibhanushali.design
                     <ExternalLink size={10} className="ml-1" />
                   </a>
                 </div>
-                <div className="p-3 bg-paper/30 border border-ink/10 rounded">
-                  <p className="font-bold text-ink mb-1 text-[10px] uppercase tracking-wider opacity-60">LinkedIn</p>
+                <div className="p-3 bg-[rgba(253,251,247,0.3)] border border-[rgba(44,44,44,0.1)] rounded">
+                  <p className="font-bold text-[#2c2c2c] mb-1 text-[10px] uppercase tracking-wider opacity-60">LinkedIn</p>
                   <a href="https://linkedin.com/in/vidhi-bhanushali" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline flex items-center">
                     /in/vidhi-bhanushali
                     <ExternalLink size={10} className="ml-1" />
@@ -259,21 +248,21 @@ const Resume: React.FC = () => {
 
             {/* Languages Section */}
             <section>
-               <h2 className="text-lg font-serif font-bold text-ink uppercase tracking-[0.2em] border-b border-ink/10 pb-2 mb-4">
+               <h2 className="text-lg font-serif font-bold text-[#2c2c2c] uppercase tracking-[0.2em] border-b border-[rgba(44,44,44,0.1)] pb-2 mb-4">
                 Languages
               </h2>
-              <div className="space-y-2 text-xs font-serif text-pencil">
+              <div className="space-y-2 text-xs font-serif text-[#555555]">
                 <div className="flex justify-between">
                   <span>English</span>
-                  <span className="font-bold text-ink">Professional</span>
+                  <span className="font-bold text-[#2c2c2c]">Professional</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Hindi</span>
-                  <span className="font-bold text-ink">Native</span>
+                  <span className="font-bold text-[#2c2c2c]">Native</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Gujarati</span>
-                  <span className="font-bold text-ink">Native</span>
+                  <span className="font-bold text-[#2c2c2c]">Native</span>
                 </div>
               </div>
             </section>
@@ -290,7 +279,7 @@ const Resume: React.FC = () => {
         </div>
 
         {/* Footer for the PDF page */}
-        <footer className="mt-16 pt-6 border-t border-ink/10 text-center text-[8px] text-gray-300 uppercase tracking-widest">
+        <footer className="mt-16 pt-6 border-t border-[rgba(44,44,44,0.1)] text-center text-[8px] text-gray-300 uppercase tracking-widest">
           References available upon request • Designed & Coded by Vidhi Bhanushali
         </footer>
       </motion.div>
