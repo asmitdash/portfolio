@@ -71,8 +71,18 @@ const Resume: React.FC = () => {
     window.print();
   };
 
+  const resumeThemeStyles = {
+    '--paper': '#fdfbf7',
+    '--ink': '#2c2c2c',
+    '--pencil': '#555555',
+    '--highlight': '#fef08a'
+  } as React.CSSProperties;
+
   return (
-    <div className="min-h-screen bg-paper pt-24 pb-16 print:p-0 print:bg-white transition-colors duration-500">
+    <div
+      className="min-h-screen bg-paper pt-24 pb-16 print:p-0 print:bg-white transition-colors duration-500"
+      style={resumeThemeStyles}
+    >
       {/* Action Bar (Hidden on Print) */}
       <motion.div 
         initial={{ y: -20, opacity: 0 }}
